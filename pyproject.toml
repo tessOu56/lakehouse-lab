@@ -1,0 +1,28 @@
+[project]
+name = "lakehouse-lab"
+version = "0.1.0"
+description = "Local lakehouse showcase — open data only (L0 bootstrap)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "dagster>=1.9",
+  "dagster-webserver>=1.9",
+  "httpx>=0.27",
+  "pandas>=2.2",
+  "pyarrow>=17",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lakehouse_lab*"]
+
+[tool.dagster]
+module_name = "lakehouse_lab.definitions"
