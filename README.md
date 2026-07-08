@@ -1,8 +1,8 @@
 # lakehouse-lab
 
-Public showcase: ingest **open data only** into a local medallion-style lakehouse (L0 bootstrap).
+Public showcase: ingest **open data only** into a local medallion-style lakehouse (L0 bootstrap) — MinIO + Dagster + Parquet, built as a personal data-platform reference implementation.
 
-**Red line**: no company systems, no internal architecture reproduction — see [develop-md integrated roadmap](https://github.com/tessOu56/develop-md/blob/main/vision/platform-2026-integrated-roadmap.md) D3.
+**Red line**: open data only; no proprietary systems, business logic, or internal architecture reproduced here.
 
 ## L0 — what works today
 
