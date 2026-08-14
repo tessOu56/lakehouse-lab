@@ -7,3 +7,6 @@ data/bronze/**/*.parquet
 *.egg-info/
 dist/
 build/
+
+# Platform tickets SSOT is platform-command — never commit distributed inbox
+docs/platform-inbox/
