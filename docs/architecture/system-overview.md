@@ -18,7 +18,7 @@ flowchart TB
   end
   subgraph storage ["Local storage"]
     Bronze["data/bronze/github_events/*.parquet"]
-    MinIO[("MinIO (S3-compatible, docker)")]
+    MinIO[("MinIO s3://lakehouse/bronze/...")]
   end
   GH --> Asset
   Asset --> Bronze
@@ -42,8 +42,8 @@ flowchart LR
 
 ## 對外整合（Integrations）
 
-- **Runtime**：Docker Compose 起 MinIO；`dagster dev -f lakehouse_lab/definitions.py`。
-- **Data**：Parquet（pandas / pyarrow）；bronze 落在 `data/bronze/`。
+- **Runtime**：Docker Compose 起 MinIO（`minio-init` 建立 `lakehouse` bucket）；`dagster dev -f lakehouse_lab/definitions.py`。
+- **Data**：Parquet（pandas / pyarrow）；bronze 寫入 `data/bronze/github_events/`（本機副本）與 `s3://lakehouse/bronze/github_events/`（MinIO API `http://localhost:9000`，dev-only keys `minioadmin`）。
 - **Registry**：platform-command → `lakehouse-lab`（role: showcase）。
 
 ## 邊界與不變式（Boundaries）
