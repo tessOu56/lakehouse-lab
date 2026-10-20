@@ -14,8 +14,10 @@ Local **L0 bronze** lab: ingest **open data only** into MinIO + Dagster + Parque
 
 ## L0 — what works today
 
-- **MinIO** (S3-compatible) via Docker Compose
+- **S3-compatible object store** via Docker Compose — [SILO](https://github.com/pgsty/silo) (`pgsty/silo`), a maintained MinIO-compatible fork. Official `minio/minio` images were removed from Docker Hub and the archived community tree is unpatched for the 2026 High write-bypass CVEs.
 - **Dagster** asset: poll GitHub public Events API → bronze Parquet under `data/bronze/github_events/`
+
+API `http://127.0.0.1:9000` and console `http://127.0.0.1:9001` are bound to localhost only. Default keys `minioadmin` / `minioadmin` are for local lab use; override with `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD`.
 
 ## Quick start
 
