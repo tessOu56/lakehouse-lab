@@ -42,7 +42,7 @@ flowchart LR
 
 ## 對外整合（Integrations）
 
-- **Runtime**：Docker Compose 起 MinIO；`dagster dev -f lakehouse_lab/definitions.py`。
+- **Runtime**：Docker Compose 起 SILO（MinIO-compatible fork；localhost:9000/9001）；`dagster dev -f lakehouse_lab/definitions.py`。
 - **Data**：Parquet（pandas / pyarrow）；bronze 落在 `data/bronze/`。
 - **Registry**：platform-command → `lakehouse-lab`（role: showcase）。
 
