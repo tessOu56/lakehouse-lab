@@ -1,12 +1,12 @@
 # lakehouse-lab
 
-Local **L0 bronze** lab: ingest **open data only** into MinIO + Dagster + Parquet. Not a production data platform.
+Local **L0 bronze** lab: ingest **open data only** into an S3-compatible store + Dagster + Parquet. Not a production data platform.
 
 ## What this proves
 
 | Proof | Honest bound |
 |-------|----------------|
-| **L0 bronze** | Docker Compose MinIO + one Dagster asset → bronze Parquet |
+| **L0 bronze** | Docker Compose SILO (MinIO-compatible) + one Dagster asset → bronze Parquet |
 | **Open data only** | [GitHub public Events API](https://docs.github.com/en/rest/activity/events). No employer, proprietary, or production datasets |
 | **Not claimed** | No silver/gold pipeline, no hosted warehouse, no production data platform |
 
